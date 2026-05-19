@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khaviar Ibiza — Experiencia de lujo mediterráneo</title>
+
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- SEO -->
+  <meta name="description" content="Khaviar Ibiza — Experiencias de aperitivo de lujo con caviar, champagne y puesta en escena para villas, yates y eventos privados en Ibiza.">
+  <meta property="og:title" content="Khaviar Ibiza — Experiencia de lujo mediterráneo">
+  <meta property="og:description" content="Caviar, champagne y sunset energy. Experiencias de lujo para eventos privados en Ibiza.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/hero-producto.webp">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts: Cormorant Garamond + Pinyon Script + Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Pinyon+Script&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+AU+NSW:wght@100..400&display=swap" rel="stylesheet">  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ki-teal':      '#2FB7B3',
+            'ki-teal-mid':  '#1A8580',
+            'ki-teal-deep': '#0D5550',
+            'ki-navy':      '#041520',
+            'ki-gold':      '#C5A059',
+          },
+          fontFamily: {
+            serif:  ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            script: ['"Pinyon Script"', 'cursive'],
+            sans:   ['Manrope', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ───────────────────────────────────────────
+       BASE
+    ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; }
+
+    /* ───────────────────────────────────────────
+       TIPOGRAFÍA — helpers
+    ─────────────────────────────────────────── */
+    .t-serif  { font-family: "Fraunces", serif;}
+    .t-script {  font-family: "Caveat", cursive; }
+    .t-sans   { font-family: Manrope, sans-serif; }
+
+    /* ───────────────────────────────────────────
+       HEADER — glassmorphism activo al scroll
+    ─────────────────────────────────────────── */
+    #main-header {
+      background: rgba(250, 250, 246, 0);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      transition: background 0.5s ease,
+                  backdrop-filter 0.5s ease,
+                  -webkit-backdrop-filter 0.5s ease,
+                  border-color 0.5s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0);
+    }
+    #main-header.scrolled {
+      background: rgba(250, 250, 246, 0.72);
+      backdrop-filter: blur(18px) saturate(1.6);
+      -webkit-backdrop-filter: blur(18px) saturate(1.6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    /* ───────────────────────────────────────────
+       HERO — arch wrapper (expands on scroll)
+    ─────────────────────────────────────────── */
+    #arch-wrapper {
+      width: 80%;
+      height: 80%;
+      margin: 0 auto;
+      will-change: width;
+      max-width: 480px; /* cap en desktop para que no sea enorme */
+    }
+
+    /* Desktop: arch más compacto */
+    @media (min-width: 1024px) {
+      #arch-wrapper {
+        max-width: 400px;
+      }
+    }
+
+    .arch-inner {
+      border-radius: 170px 170px 0px 0px;
+      overflow: hidden;
+      aspect-ratio: 3 / 5;
+          box-shadow: inset 0px 10px 40px rgb(0 0 0 / 54%);
+    }
+
+    .arch-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+
+    }
+
+    /* ───────────────────────────────────────────
+       CAVIAR DOT SEPARATOR
+    ─────────────────────────────────────────── */
+    .caviar-sep {
+      width: 100%;
+      height: 28px;
+      background-image:
+        radial-gradient(circle, rgba(197,160,89,0.55) 1.5px, transparent 1.5px);
+      background-size: 18px 18px;
+      background-position: center;
+    }
+
+    /* ───────────────────────────────────────────
+       TEAL SECTION — subtle fish-scale texture
+    ─────────────────────────────────────────── */
+    .teal-texture::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cellipse cx='24' cy='24' rx='20' ry='14' fill='none' stroke='%23ffffff' stroke-width='0.6' opacity='0.08'/%3E%3Cellipse cx='24' cy='24' rx='12' ry='8' fill='none' stroke='%23ffffff' stroke-width='0.4' opacity='0.06'/%3E%3C/svg%3E");
+      background-size: 48px 48px;
+    }
+
+    /* ───────────────────────────────────────────
+       STAGGERED CARDS — como funciona
+    ─────────────────────────────────────────── */
+    .card-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .card-left  { align-self: flex-start; width: 100%; }
+    .card-right { align-self: flex-end;   width: 100%; }
+
+    @media (min-width: 768px) {
+      .card-left  { width: 65%; }
+      .card-right { width: 65%; }
+    }
+
+    /* Desktop: cards lado a lado */
+    @media (min-width: 1024px) {
+      .card-stack {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 24px;
+        max-width: 1100px;
+      }
+      .card-left  { width: 50%; align-self: auto; }
+      .card-right { width: 50%; align-self: auto; }
+      .diagonal-line { display: none; }
+    }
+
+    /* Glassmorphism card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 60px;
+      padding: 2.5rem;
+    }
+
+    /* Gold-bordered card */
+    .border-card {
+      border-left: 3px solid #2FB7B3;
+      padding: 2rem 2rem 2rem 2.5rem;
+    }
+
+    /* Diagonal connector */
+    .diagonal-line {
+      width: 1px;
+      height: 64px;
+      background: linear-gradient(to bottom, rgba(47,183,179,0.4), rgba(197,160,89,0.4));
+      align-self: center;
+      margin: 0 auto;
+    }
+
+    /* ───────────────────────────────────────────
+       CAROUSEL — no scrollbar
+    ─────────────────────────────────────────── */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* ───────────────────────────────────────────
+       FADE-IN on scroll
+    ─────────────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(.4,0,.2,1),
+                  transform 0.75s cubic-bezier(.4,0,.2,1);
+    }
+    .fade-in.delay-1 { transition-delay: 0.12s; }
+    .fade-in.delay-2 { transition-delay: 0.24s; }
+    .fade-in.delay-3 { transition-delay: 0.36s; }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ───────────────────────────────────────────
+       FIXED CTA — WhatsApp
+    ─────────────────────────────────────────── */
+    #fixed-cta {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      pointer-events: none;
+    }
+    #fixed-cta.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* ───────────────────────────────────────────
+       STEP CONNECTOR LINE
+    ─────────────────────────────────────────── */
+    .step-line {
+      width: 1px;
+      height: 48px;
+      background: rgba(197,160,89,0.2);
+      margin: 10px 4px; /* aligned with icon center */
+    }
+
+    /* ───────────────────────────────────────────
+       SECTION backgrounds — color journey
+    ─────────────────────────────────────────── */
+    #hero           { background-color: #ffffff; }
+    #que-es         { background-color: #FAFAF6; }
+    #como-funciona  { background-color: #f6f8f8; }
+    #formatos       { background-color:  #2FB7B3; }
+    #como-reservar  { background-color: #ffffff; }
+    #make-it-happen { background-color: #FAFAF6; }
+    footer          { background-color:#f5f5f5 ; }
+
+
+    /* ───────────────────────────────────────────
+       PRECIO HINT en cards de formato
+    ─────────────────────────────────────────── */
+    .price-hint {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .price-hint-line {
+      height: 1px;
+      width: 20px;
+      background: rgba(197,160,89,0.5);
+    }
+    .price-hint-text {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(197,160,89,0.85);
+      letter-spacing: 0.05em;
+    }
+
+
+    .backgr{background-color: #f5f5f500;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;}
+     .backgr:hover{background-color:#C5A059;}
+
+
+    /* ───────────────────────────────────────────
+       DESKTOP RESPONSIVE — escala global
+    ─────────────────────────────────────────── */
+
+    /* Secciones: en desktop no necesitan min-h-screen completo */
+    @media (min-width: 1024px) {
+
+      /* Hero más compacto en desktop */
+      #hero { min-height: 100vh; }
+
+      /* Resto de secciones: altura proporcional, no min-h-screen */
+      #que-es,
+      #como-funciona,
+      #como-reservar,
+      #make-it-happen {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      /* Formatos: más compacto */
+      #formatos {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      /* Sunset: más ajustado */
+      #sunset {
+        min-height: 65vh;
+      }
+    }
+
+    /* ── Qué es: 2 columnas en desktop ── */
+    @media (min-width: 1024px) {
+      #que-es .que-es-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+        text-align: left;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      #que-es .que-es-inner .que-es-image {
+        order: 2;
+        margin: 0;
+      }
+      #que-es .que-es-inner .que-es-text {
+        order: 1;
+      }
+      #que-es .que-es-inner .rule-center {
+        justify-content: flex-start;
+      }
+    }
+
+    /* ── Cómo reservar: 2 columnas en desktop ── */
+    @media (min-width: 1024px) {
+      #como-reservar .reservar-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      #como-reservar .reservar-inner .reservar-steps {
+        max-width: none;
+        margin: 0;
+      }
+      .arch-inner {
+    border-radius: 200px 200px 0px 0px;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+}
+    }
+
+    /* ── Título reservar en mobile — centrado ── */
+    @media (max-width: 1023px) {
+      .reservar-intro { text-align: center; }
+      
+      
+    }
+
+    /* Carousel: más cards visibles en desktop */
+    @media (min-width: 1024px) {
+      .format-card {
+        min-width: 300px !important;
+        max-height: 440px !important;
+      }
+    }
+    @media (min-width: 1280px) {
+      .format-card {
+        min-width: 320px !important;
+        max-height: 460px !important;
+      }
+
+      .border2{border-radius: 0px!important;
+      
+      }
+
+    }
+
+
+     /* ───────────────────────────────────────────
+      Gradiante
+    ─────────────────────────────────────────── */
+
+    .section-dual-gradient {
+  position: relative;
+  background-color: #D4D4D4;
+  background-image:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(47, 183, 179, 0.45) 0%,
+      rgba(47, 183, 179, 0.20) 30%,
+      transparent 65%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(47, 183, 179, 0.45) 0%,
+      rgba(47, 183, 179, 0.20) 30%,
+      transparent 65%
+    );
+}
+
+    /* ───────────────────────────────────────────
+       SECCIÓN FORMULARIO
+    ─────────────────────────────────────────── */
+    #formulario { background-color: #041520; }
+
+    .form-field {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 14px 18px;
+      color: rgba(255,255,255,0.88);
+      font-family: Manrope, sans-serif;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .form-field::placeholder { color: rgba(255,255,255,0.25); }
+    .form-field:focus {
+      border-color: rgba(47,183,179,0.6);
+      background: rgba(47,183,179,0.06);
+    }
+    .form-label {
+      display: block;
+      font-family: Manrope, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 7px;
+    }
+    #form-success { display: none; }
+    #form-success.visible { display: block; }
+    #form-error.visible { display: block !important; }
+
+  </style>
+</head>
+
+<body class="font-sans antialiased text-gray-900">
+
+<!-- ═══════════════════════════════════════════════
+     FIXED HEADER — Logo only
+══════════════════════════════════════════════════ -->
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 h-16 md:h-20 flex items-center justify-center px-6">
+  <a href="#" aria-label="Khaviar Ibiza — inicio">
+    <span class="t-serif font-semibold text-xl md:text-2xl uppercase text-gray-900 hover:opacity-60 transition-opacity duration-300" style="color: #C5A059;">
+      Khaviar 
+    </span>
+    <span class=" font-semibold text-xl md:text-2xl text-gray-900 hover:opacity-60 transition-opacity duration-300" style="font-family: 'Caveat', cursive; letter-spacing: 2px;color: #C5A059;">
+      Ibiza
+    </span>
+  </a>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 · HERO
+     Background: #FAFAF6 → blanco cálido (mañana)
+══════════════════════════════════════════════════ -->
+<section id="hero" class="relative min-h-screen flex flex-col items-center overflow-hidden pt-20 md:pt-28 lg:pt-24">
+
+  <!-- ── Headline block ── -->
+  <div class="text-center px-6 mb-8 md:mb-12 lg:mb-10 fade-in">
+
+    <h1 style="line-height: 1.05; padding-top: 32px;">
+      <span class="t-serif font-semibold text-gray-900"
+            style="font-size: clamp(3rem, 5vw, 3.4rem); color: #C5A059;">
+        Forget
+      </span>
+      <br>
+      <span class="t-script text-gray-700"
+            style="font-family: 'Fraunces', serif; line-height: 1.15; display: block;
+                   font-size: clamp(3rem, 4vw, 2.8rem); color: #C5A059;">
+        The Rules
+      </span>
+    </h1>
+
+    <!-- Tagline -->
+    <p class="t-sans tracking-[0.22em] text-gray-400 mt-4"
+       style="font-size: clamp(11px, 1.2vw, 13px);">
+      Oscetra &nbsp;·&nbsp; Champagne &nbsp;·&nbsp; Sunset energy
+    </p>
+
+  </div>
+
+  <!-- ── Arch image — expands on scroll ── -->
+  <div id="arch-wrapper">
+    <div class="arch-inner">
+      <!--
+        PLACEHOLDER: sustituir por imagen real del carrito en exteriores.
+        Recomendación: foto frontal del carrito frente al mar, luz cálida.
+      -->
+      <img
+        src="img/hero-producto.webp"
+        alt="Khaviar Ibiza — La barra de experiencia"
+        loading="eager"
+      >
+    </div>
+  </div>
+
+  <!-- ── Scroll hint ── -->
+  <div class="absolute bottom-10 -translate-x-1/2 flex flex-col items-center gap-2 opacity-35 fade-in delay-3">
+    <p class="t-sans text-[10px] tracking-[0.3em] uppercase " style="color: rgb(255 255 255);">Descubre</p>
+    <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
+      <path d="M7 1v14M1 11l6 6 6-6" stroke="#6B6B6B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="color: rgb(255 255 255);"/>
+    </svg>
+  </div>
+
+</section>
+
+
+<!-- ── No separator: hero y qué-es fluyen en el mismo tono ── -->
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 · QUÉ ES KHAVIAR IBIZA
+     Background: #FAFAF6 → mismo tono que hero (continuo)
+══════════════════════════════════════════════════ -->
+<section id="que-es" class="min-h-screen lg:min-h-0 flex flex-col justify-center py-20 px-6 md:px-16 lg:px-24">
+
+  <!-- Wrapper con clase para layout desktop 2-col -->
+  <div class="que-es-inner w-full max-w-6xl mx-auto">
+
+    <!-- Texto -->
+    <div class="que-es-text text-center lg:text-left mb-10 lg:mb-0">
+
+      <div class="fade-in mb-5">
+        <span class="t-serif font-semibold"
+              style="color: #C5A059; font-size: clamp(13px, 1.5vw, 16px); letter-spacing: 3px; text-transform: uppercase;">
+          La Esencia
+        </span>
+      </div>
+
+      <h2 class="mb-8 fade-in delay-1" style="line-height: 1.1;">
+        <span class="t-serif font-semibold text-gray-900"
+              style="font-size: clamp(2rem, 4vw, 3.2rem);">Qué es Khaviar </span>
+        <span class="t-script text-gray-700"
+              style="font-size: clamp(2rem, 4vw, 3.2rem);">Ibiza</span>
+      </h2>
+
+      <p class="t-sans text-gray-600 leading-relaxed fade-in delay-2 max-w-xl mx-auto lg:mx-0"
+         style="font-size: clamp(13px, 1.4vw, 16px);">
+        Khaviar Ibiza es una experiencia de aperitivo de lujo para villas, yates, eventos privados y celebraciones especiales en la isla. Caviar, brindis y puesta en escena se unen en un formato visual, flexible y memorable.
+      </p>
+
+      <div class="mt-10 fade-in delay-3 rule-center flex justify-center lg:justify-start">
+        <div class="w-16 h-px" style="background-color: #C5A059; opacity: 0.45;"></div>
+      </div>
+
+      <div class="mt-8 flex justify-center lg:justify-start fade-in delay-3">
+        <img src="esturion.svg" alt="Khaviar Esturion" style="width: 52px; height: 52px; opacity: 0.75;">
+      </div>
+
+    </div>
+
+    <!-- Imagen -->
+    <div class="que-es-image flex justify-center">
+      <article class="relative overflow-hidden"
+               style="border-radius: 60px; width: 100%; max-width: 320px; aspect-ratio: 3/4; max-height: 380px;">
+        <img src="img/_A748085.jpg"
+             alt="Khaviar Aperitif"
+             class="absolute inset-0 w-full h-full object-cover">
+      </article>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── Caviar dot separator (transición a sand) ── -->
+<div class="caviar-sep" style="background-color: #f6f8f8;"></div>
+
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 · CÓMO FUNCIONA
+     Background: #E5D9C8 → arena cálida (tarde)
+══════════════════════════════════════════════════ -->
+<section id="como-funciona" class="min-h-screen lg:min-h-0 flex flex-col justify-center py-20 px-6 md:px-12 lg:px-20"
+          style="background-image: url(img/como-funciona-bg.webp); justify-items: center;">
+
+  <!-- Title -->
+  <div class="text-center mb-12 fade-in">
+    <h2 style="line-height: 1.1;">
+      <span class="t-serif font-semibold text-white"
+            style="font-size: clamp(14px, 1.6vw, 18px); letter-spacing: 3px; text-transform: uppercase;">
+        La Experiencia
+      </span>
+    </h2>
+  </div>
+
+  <!-- Staggered cards -->
+  <div class="card-stack px-0 md:px-8" style="align-items: center;">
+
+    <!-- Card 1 — Cómo funciona (LEFT, glassmorphism) -->
+    <div class="card-left fade-in delay-1">
+      <div class="glass-card" style="text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+        <div class="w-9 h-9 rounded-full flex items-center justify-center mb-4 mx-auto">
+          <span class="t-serif text-white font-bold" style="font-size: 2.4rem;">01</span>
+        </div>
+        <h3 class="t-serif font-semibold mb-3 text-white"
+            style="font-size: clamp(1.4rem, 2.5vw, 1.8rem);">
+          La Experiencia
+        </h3>
+        <p class="t-sans text-white leading-relaxed" style="font-size: clamp(12px, 1.2vw, 14px);">
+          Khaviar Ibiza desarrolla experiencias a medida según el contexto, el número de invitados y el estilo de cada ocasión. Cada propuesta gira en torno a una barra de servicio instalada dentro del evento, donde se integran producto, servicio y puesta en escena.
+        </p>
+      </div>
+    </div>
+
+    <!-- Diagonal connector -->
+    <div class="diagonal-line fade-in" style="transition-delay: 0.3s"></div>
+
+    <!-- Card 2 — Qué incluye (RIGHT) -->
+    <div class="card-right fade-in delay-2">
+      <div style="text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+        <div class="w-9 h-9 rounded-full flex items-center justify-center mb-4 mx-auto">
+          <span class="t-serif font-bold text-white" style="font-size: 2.4rem;">02</span>
+        </div>
+        <h3 class="t-serif font-semibold mb-3 text-white"
+            style="font-size: clamp(1.4rem, 2.5vw, 1.8rem);">
+          Qué incluye
+        </h3>
+        <p class="t-sans text-white leading-relaxed" style="font-size: clamp(12px, 1.2vw, 14px);">
+          Cada experiencia puede integrar selección de caviares, maridajes, brindis, servicio y elementos visuales que acompañan la escena. Todo se define de forma personalizada según el contexto del evento.
+        </p>
+      </div>
+    </div>
+     <img src="flor-medit.svg"
+           alt="Khaviar Esturion"
+           style="width: 70px; height: 70px; opacity: 0.3;margin-top: 20px;">
+
+  </div>
+
+ 
+</section>
+
+
+<!-- ── Caviar dot separator (teal tone) ── -->
+<div class="caviar-sep" style="background-color: #2FB7B3;"></div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4 · NUESTROS FORMATOS
+     Background: #1A8580 → teal mediterráneo (atardecer)
+══════════════════════════════════════════════════ -->
+<section id="formatos" class="relative min-h-screen flex flex-col justify-center py-24 overflow-hidden"  >
+
+  <!-- ── Mediterranean mosaic background — mosaic.svg ── -->
+  <div class="absolute inset-0 pointer-events-none" style="z-index:0; opacity:0.03; background-image:url('mosaic.svg'); background-repeat:repeat; background-size:200px 200px; background-color: #ffffff;" aria-hidden="true"></div>
+
+  
+
+  <!-- Section title -->
+  <div class="text-center px-6 mb-10 fade-in">
+    <p class="t-sans text-[10px] tracking-[0.4em] uppercase text-white/40 mb-4">Elige tu momento</p>
+    <h2 style="line-height: 1.1;">
+      <span class="t-serif font-semibold text-white"
+            style="font-size: clamp(2rem, 4vw, 3rem);">Nuestros formatos</span>
+    </h2>
+  </div>
+
+  <!-- Horizontal carousel — desktop muestra más cards -->
+  <div class="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory pl-6 pr-6 md:pl-10 md:pr-10 lg:px-16 pb-2 fade-in delay-1 lg:justify-center">
+
+    <!-- ── Card 01: Aperitif ── -->
+    <article class="format-card relative flex-shrink-0 min-w-[82vw] md:min-w-[36vw] snap-center rounded-[2rem] overflow-hidden"
+             style="height: 600px;">
+      <img src="img/_A748155.jpg"
+           alt="Khaviar Aperitif"
+           class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgb(38 38 38 / 92%) 38%, rgba(4,21,32,0.1) 70%, transparent);"></div>
+      <div class="absolute bottom-0 inset-x-0 p-7">
+        <p class="t-sans text-[10px] tracking-[0.3em] uppercase text-white/40 mb-2">01</p>
+        <h4 class="t-serif font-semibold text-2xl text-white">
+          Khaviar <span class="t-script font-normal">Aperitif</span>
+        </h4>
+        <p class="t-sans text-sm text-white/65 leading-relaxed mt-2 mb-5">
+          El formato más versátil. Barra de servicio, caviar Oscetra y champagne. Desde 20 personas.
+        </p>
+
+         <!-- Precio hint -->
+        <div class="price-hint mb-3">
+          <div class="price-hint-line"></div>
+          <span class="price-hint-text">Desde 400€</span>
+        </div>
+        <div class="inline-flex items-center gap-2 border border-white/25 rounded-full px-4 py-2 backgr">
+          <a href="https://wa.me/message/FHPDPLPRUCSXO1" target="_blank"> <span class="t-sans text-xs text-white/60 tracking-wide">Hablemos</span></a>
+          <svg class="w-3 h-3 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── Card 02: Selection ── -->
+    <article class="format-card relative flex-shrink-0 min-w-[82vw] md:min-w-[36vw] snap-center rounded-[2rem] overflow-hidden"
+             style="height: 600px;">
+      <img src="img/_A748690-2.jpg"
+           alt="Khaviar Selection"
+           class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgb(38 38 38 / 92%) 38%, rgba(4,21,32,0.1) 70%, transparent);"></div>
+      <div class="absolute bottom-0 inset-x-0 p-7">
+        <p class="t-sans text-[10px] tracking-[0.3em] uppercase text-white/40 mb-2">02</p>
+        <h4 class="t-serif font-semibold text-2xl text-white">
+          Khaviar <span class="t-script font-normal">Selection</span>
+        </h4>
+        <p class="t-sans text-sm text-white/65 leading-relaxed mt-2 mb-5">
+          Versión elevada con bebida superior y acompañamientos gourmet: ostras, vieiras, sashimi de salmón.
+        </p>
+         <!-- Precio hint -->
+        <div class="price-hint mb-3">
+          <div class="price-hint-line"></div>
+          <span class="price-hint-text">Desde 400€</span>
+        </div>
+        <div class="inline-flex items-center gap-2 border border-white/25 rounded-full px-4 py-2 backgr">
+          <a href="https://wa.me/message/FHPDPLPRUCSXO1" target="_blank"><span class="t-sans text-xs text-white/60 tracking-wide">Hablemos</span></a>
+          <svg class="w-3 h-3 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── Card 03: Prestige ── -->
+    <article class="format-card relative flex-shrink-0 min-w-[82vw] md:min-w-[36vw] snap-center rounded-[2rem] overflow-hidden"
+             style="height: 600px;">
+      <img src="img/_A748165.jpg"
+           alt="Khaviar Prestige"
+           class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgb(38 38 38 / 92%) 38%, rgba(4,21,32,0.1) 70%, transparent);"></div>
+      <div class="absolute bottom-0 inset-x-0 p-7">
+        <p class="t-sans text-[10px] tracking-[0.3em] uppercase text-white/40 mb-2">03</p>
+        <h4 class="t-serif font-semibold text-2xl text-white">
+          Khaviar <span class="t-script font-normal">Prestige</span>
+        </h4>
+        <p class="t-sans text-sm text-white/65 leading-relaxed mt-2 mb-5">
+          El formato más exclusivo. Vodka premium, wagyu y cangrejo real. La experiencia en su máxima expresión.
+        </p>
+         <!-- Precio hint -->
+        <div class="price-hint mb-3">
+          <div class="price-hint-line"></div>
+          <span class="price-hint-text">Desde 400€</span>
+        </div>
+        <div class="inline-flex items-center gap-2 border border-white/25 rounded-full px-4 py-2 backgr">
+          <a href="https://wa.me/message/FHPDPLPRUCSXO1" target="_blank"><span class="t-sans text-xs text-white/60 tracking-wide">Hablemos</span></a>
+          <svg class="w-3 h-3 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── Card 04: Bespoke (no image — designed card) ── -->
+    <article class="format-card relative flex-shrink-0 min-w-[82vw] md:min-w-[36vw] snap-center rounded-[2rem] overflow-hidden flex flex-col justify-end"
+             style="height: 600px; background: linear-gradient(135deg, #0D5550 0%, #041520 100%);">
+      <!-- Subtle caviar dot pattern inside card -->
+       <img src="img/_A748322.webp"
+           alt="Khaviar Prestige"
+           class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgb(38 38 38 / 92%) 38%, rgba(4,21,32,0.1) 70%, transparent);"></div>
+      <div class="absolute bottom-0 inset-x-0 p-7">
+        <p class="t-sans text-[10px] tracking-[0.3em] uppercase text-white/40 mb-2">04</p>
+        <h4 class="t-serif font-semibold text-2xl text-white">
+          Khaviar <span class="t-script font-normal">Bespoke</span>
+        </h4>
+        <p class="t-sans text-sm text-white/65 leading-relaxed mt-2 mb-5">
+          Totalmente a medida. Diseñamos juntos la experiencia según tu evento, tus invitados y tu visión.
+        </p>
+         <!-- Precio hint -->
+        <div class="price-hint mb-3">
+          <div class="price-hint-line"></div>
+          <span class="price-hint-text">Desde 400€</span>
+        </div>
+        <div class="inline-flex items-center gap-2 border border-white/25 rounded-full px-4 py-2 backgr">
+          <a href="https://wa.me/message/FHPDPLPRUCSXO1" target="_blank"><span class="t-sans text-xs text-white/60 tracking-wide">Hablemos</span></a>
+          <svg class="w-3 h-3 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Scroll hint -->
+  <p class="t-sans text-[10px] tracking-[0.25em] uppercase text-white/25 text-center mt-6 fade-in delay-2" style="color:#D4D4D4">
+    Desliza para explorar →
+  </p>
+
+</section>
+
+
+<!-- ── Caviar dot separator (deep teal tone) ── -->
+<div class="caviar-sep" style="background-color:#2FB7B3"></div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 5 · CÓMO RESERVAR
+     Background: #0D5550 → teal profundo (crepúsculo)
+══════════════════════════════════════════════════ -->
+<section id="como-reservar" class="relative min-h-screen lg:min-h-0 flex flex-col justify-center py-20 px-6 lg:px-16 overflow-hidden" >
+  <!-- ── Sommelier SVG — decoración sutil de fondo ── -->
+  <!--
+    Color del SVG: apenas un tono más claro que el fondo #0D5550
+    Para que sea casi imperceptible pero añada textura y personalidad.
+    El sommelier sostiene una bandeja a la altura del hombro.
+  -->
+ <!--
+  <div class="absolute inset-0 pointer-events-none section-dual-gradient border2 " style="z-index:0;border-radius: 200px 200px 0px 0px;background-color:#ffffff;"></div>
+  -->
+  <div class="absolute right-0 bottom-0 h-full flex items-end justify-end pointer-events-none select-none border2 "
+       aria-hidden="true">
+   
+  </div>
+
+  <!-- Wrapper con clase para layout desktop -->
+  <div class="reservar-inner relative z-10 w-full">
+
+    <!-- Columna izquierda (en desktop: título + contexto visual) -->
+    <div class="reservar-intro mb-12 lg:mb-0 text-center lg:text-left">
+      <div class="fade-in">
+        <p class="t-sans tracking-[0.35em] uppercase mb-4" style="color:#041520; font-size: 11px;">Proceso</p>
+        <h2 style="line-height: 1.1;">
+          <span class="t-serif font-semibold" style="color: #041520 ; font-size: clamp(3rem, 3.5vw, 2.8rem);">
+            Cómo<br>reservar
+          </span>
+        </h2>
+        <div class="mt-6 hidden lg:block">
+          <p class="t-sans leading-relaxed" style="color:#041520; font-size: 13px; max-width:320px;">
+            Todo empieza con un mensaje. En menos de 24 horas tenemos tu propuesta lista.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha: los pasos -->
+    <div class="reservar-steps max-w-sm mx-auto lg:max-w-none w-full">
+
+    <!-- Step 1 -->
+    <div class="flex items-start gap-5 fade-in delay-1">
+      <div class="flex flex-col items-center flex-shrink-0">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center"
+             style="background: rgba(47,183,179,0.18); border: 1px solid rgba(47,183,179,0.38);">
+          <!-- WhatsApp icon -->
+          <svg class="w-5 h-5" fill="rgba(47,183,179,1)" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+        </div>
+        <div class="step-line"></div>
+      </div>
+      <div class="pt-1 pb-10">
+        <h4 class="t-serif font-semibold text-lg text-white mb-1" style="color: #7d7d7d;">Escríbenos por WhatsApp</h4>
+        <p class="t-sans text-sm text-white/55 leading-relaxed" style="color: #7d7d7d;">Define fecha, localización y número de invitados.</p>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="flex items-start gap-5 fade-in delay-2">
+      <div class="flex flex-col items-center flex-shrink-0">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center"
+             style="background: rgba(47,183,179,0.18); border: 1px solid rgba(47,183,179,0.38);">
+          <!-- Calendar icon -->
+          <svg class="w-5 h-5" fill="none" stroke="rgba(47,183,179,1)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div class="step-line"></div>
+      </div>
+      <div class="pt-1 pb-10">
+        <h4 class="t-serif font-semibold text-lg text-white mb-1" style="color: #7d7d7d;">Elige fecha y formato</h4>
+        <p class="t-sans text-sm text-white/55 leading-relaxed" style="color: #7d7d7d;">Seleccionamos juntos la propuesta ideal para tu evento.</p>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="flex items-start gap-5 fade-in delay-3">
+      <div class="flex-shrink-0">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center"
+             style="background: rgba(47,183,179,0.18); border: 1px solid rgba(47,183,179,0.38);">
+          <!-- Star icon -->
+          <svg class="w-5 h-5" fill="none" stroke="rgba(47,183,179,1)" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pt-1">
+        <h4 class="t-serif font-semibold text-lg text-white mb-1" style="color: #7d7d7d;">Disfruta del ritual</h4>
+        <p class="t-sans text-sm text-white/55 leading-relaxed" style="color: #7d7d7d;">Khaviar Ibiza coordina todo. Tú solo disfrutas.</p>
+      </div>
+    </div>
+
+    </div><!-- /reservar-steps -->
+
+  </div><!-- /reservar-inner -->
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 6 · IBIZA SUNSET
+     Full bleed image → noche se acerca
+══════════════════════════════════════════════════ -->
+<section id="sunset" class="relative min-h-screen lg:min-h-[70vh] flex items-center justify-center overflow-hidden">
+
+  <!-- Background image -->
+  <img
+    src="https://images.unsplash.com/photo-1505881502353-a1986add3762?w=1400&q=88"
+    alt="Ibiza atardecer"
+    class="absolute inset-0 w-full h-full object-cover"
+    style="object-position: center 40%;"
+  >
+
+  <!-- Gradient overlay: transparent top → deep navy bottom -->
+  <div class="absolute inset-0"
+       style="background: linear-gradient(to bottom, rgba(4,21,32,0.25) 0%, rgba(4,21,32,0.65) 60%, rgba(4,21,32,0.90) 100%);"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center px-8 max-w-xl mx-auto fade-in">
+    <p class="t-sans text-[10px] tracking-[0.45em] uppercase text-white/40 mb-6">Los escenarios</p>
+    <h2 class="mb-8" style="line-height: 1.1;">
+      <span class="t-serif font-semibold text-white" style="font-size: clamp(2rem, 4vw, 3.4rem);">Ibiza </span>
+      <span class="t-script text-white/85" style="font-size: clamp(2rem, 4vw, 3.4rem);">Sunset</span>
+    </h2>
+    <p class="t-sans text-base md:text-lg text-white/70 leading-relaxed">
+      Villas frente al mar, yates en cala tranquila, rooftops al atardecer. Khaviar Ibiza lleva la experiencia allí donde la isla se muestra en su mejor luz.
+    </p>
+    <!-- Gold ornament -->
+    <div class="flex items-center justify-center gap-4 mt-10">
+      <div class="h-px w-14" style="background-color: #C5A059; opacity: 0.45;"></div>
+      <div class="w-1.5 h-1.5 rounded-full" style="background-color: #C5A059; opacity: 0.6;"></div>
+      <div class="h-px w-14" style="background-color: #C5A059; opacity: 0.45;"></div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ── Caviar dot separator (navy tone) ── -->
+<div class="caviar-sep" style="background-color: #041520;"></div>
+
+ 
+
+
+<!-- ═══════════════════════════════════════════════
+     SECCIÓN FORMULARIO
+     id="formulario" — enlazado desde Make it Happen
+══════════════════════════════════════════════════ -->
+ <section id="formulario" class="py-24 px-6">
+  <div class="max-w-lg mx-auto w-full">
+
+    <!-- Cabecera -->
+    <div class="text-center mb-12 fade-in">
+      <p class="t-sans tracking-[0.35em] uppercase mb-4"
+         style="color: rgba(47,183,179,0.65); font-size: 11px;">Contacto</p>
+      <h2 style="line-height: 1.1;">
+        <span class="t-serif font-semibold" style="font-size: clamp(2rem, 3.5vw, 2.8rem); color: #C5A059;">Cuéntanos </span>
+        <span style="font-family: 'Caveat', cursive; font-size: clamp(2rem, 3.5vw, 2.8rem); color: #C5A059;">tu evento</span>
+      </h2>
+      <p class="t-sans leading-relaxed mt-4 max-w-sm mx-auto"
+         style="font-size: 13px; color: rgba(255,255,255,0.4);">
+        Déjanos un mensaje y te enviamos una propuesta en menos de 24 horas.
+      </p>
+    </div>
+
+         
+
+      <!-- Botón enviar -->
+       
+      <button onclick="window.location.href='mailto:info@khaviaribiza.com'"
+       
+        class="t-sans font-semibold text-sm text-white transition-all duration-300 hover:brightness-110 active:scale-95"
+        style="background-color: #2FB7B3; border: none; border-radius: 50px; padding: 16px 32px; cursor: pointer; box-shadow: 0 8px 28px rgba(47,183,179,0.25); display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;"
+      >
+        Enviar consulta
+      </button>
+
+      <!-- Mensaje de éxito (?enviado=1) -->
+      <div id="form-success" class="text-center" style="padding: 24px 0;">
+        <p class="t-serif font-semibold" style="color: #C5A059; font-size: 1.6rem; margin-bottom: 8px;">¡Mensaje recibido!</p>
+        <p class="t-sans" style="font-size: 13px; color: rgba(255,255,255,0.4);">
+          En menos de 24 horas te enviamos tu propuesta personalizada.
+        </p>
+      </div>
+
+      <!-- Mensaje de error (?error=1) -->
+      <div id="form-error" style="display:none; text-align:center; padding: 16px; border: 1px solid rgba(197,160,89,0.3); border-radius: 12px; background: rgba(197,160,89,0.06);">
+        <p class="t-sans" style="font-size: 13px; color: rgba(197,160,89,0.85);">
+          Algo ha ido mal al enviar el mensaje. Por favor escríbenos directamente a
+          <a href="mailto:info@khaviaribiza.com" style="color: #C5A059; text-decoration: underline;">info@khaviaribiza.com</a>
+        </p>
+      </div>
+
+    </form>
+
+    <!-- Contacto directo alternativo -->
+    <div style="display: flex; align-items: center; gap: 12px; margin-top: 32px; margin-bottom: 20px;">
+      <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.07);"></div>
+      <span class="t-sans" style="font-size: 10px; color: rgba(255,255,255,0.22); white-space: nowrap; letter-spacing: 0.15em; text-transform: uppercase;">o escríbenos directamente</span>
+      <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.07);"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════ -->
+<footer class="py-10 px-6 text-center">
+  <p class="t-serif text-base tracking-[0.35em] uppercase mb-5" style="color: #C5A059;">Khaviar Ibiza</p>
+
+  <!-- Legal -->
+  <div class="flex flex-wrap justify-center items-center gap-4 mb-6">
+    <a href="aviso_legal.html" class="t-sans text-[10px] tracking-[0.15em] uppercase hover:opacity-60 transition-opacity" style="color: #aaa;">Aviso Legal</a>
+    <div class="w-1 h-1 rounded-full" style="background:#ccc;"></div>
+    <a href="politica_privacidad.html" class="t-sans text-[10px] tracking-[0.15em] uppercase hover:opacity-60 transition-opacity" style="color: #aaa;">Política de Privacidad</a>
+  </div>
+
+  <p class="t-sans text-[10px]" style="color: #bbb;">© 2025 Khaviar Ibiza · Todos los derechos reservados</p>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════
+     FIXED BOTTOM CTA — WhatsApp (aparece al scroll)
+══════════════════════════════════════════════════ -->
+<nav id="fixed-cta" class="fixed bottom-5 left-0 right-0 flex justify-center z-50 px-5" role="navigation" aria-label="Reservar">
+  <a href="https://wa.me/message/FHPDPLPRUCSXO1" target="_blank"
+     class="flex items-center justify-center gap-2.5 rounded-full py-3.5 px-7 t-sans font-semibold text-sm text-white transition-all duration-300 hover:brightness-110 active:scale-95"
+     style="background-color: #2FB7B3; box-shadow: 0 8px 32px rgba(47,183,179,0.32); max-width: 360px; width: 100%;    border: 2px solid #11aca7;">
+    <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    Reservar Experiencia
+  </a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════ -->
+<script>
+/* ──────────────────────────────────────────────────
+   1. ARCH EXPANSION — responde al scroll en tiempo real
+   El arco crece del 80% al 100% durante los primeros
+   ~40% del hero (≈ viewport height × 0.4)
+────────────────────────────────────────────────── */
+const archWrapper = document.getElementById('arch-wrapper');
+const heroSection = document.getElementById('hero');
+
+function updateArch() {
+  const scrollY   = window.scrollY;
+  const threshold = heroSection.offsetHeight * 0.4;
+  const progress  = Math.min(scrollY / threshold, 1);
+  const width     = 80 + 20 * progress;          /* 80% → 100% */
+  archWrapper.style.width = width + '%';
+}
+
+/* RAF loop: evita janking en scroll */
+let archRafPending = false;
+window.addEventListener('scroll', () => {
+  if (!archRafPending) {
+    archRafPending = true;
+    requestAnimationFrame(() => {
+      updateArch();
+      archRafPending = false;
+    });
+  }
+}, { passive: true });
+
+/* Llamada inicial por si hay scroll al cargar */
+updateArch();
+
+
+/* ──────────────────────────────────────────────────
+   2. HEADER — fondo blanco translúcido al hacer scroll
+────────────────────────────────────────────────── */
+const mainHeader = document.getElementById('main-header');
+
+function updateHeader() {
+  if (window.scrollY > 50) {
+    mainHeader.classList.add('scrolled');
+  } else {
+    mainHeader.classList.remove('scrolled');
+  }
+}
+
+window.addEventListener('scroll', updateHeader, { passive: true });
+updateHeader();
+
+
+/* ──────────────────────────────────────────────────
+   3. FADE-IN — Intersection Observer
+   Activa .visible cuando el elemento entra al viewport
+────────────────────────────────────────────────── */
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target); /* deja de observar una vez animado */
+    }
+  });
+}, {
+  threshold: 0.12,
+  rootMargin: '0px 0px -40px 0px'
+});
+
+document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+/* Hero: animar inmediatamente al cargar */
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.querySelectorAll('#hero .fade-in').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 80);
+});
+
+
+/* ──────────────────────────────────────────────────
+   4. FIXED CTA — aparece al pasar la mitad del hero
+────────────────────────────────────────────────── */
+const fixedCta = document.getElementById('fixed-cta');
+
+function updateFixedCta() {
+  const threshold = heroSection.offsetHeight * 0.45;
+  if (window.scrollY > threshold) {
+    fixedCta.classList.add('visible');
+  } else {
+    fixedCta.classList.remove('visible');
+  }
+}
+
+window.addEventListener('scroll', updateFixedCta, { passive: true });
+updateFixedCta();
+
+
+/* ──────────────────────────────────────────────────
+   5. FORMULARIO — éxito o error tras envío PHP
+   send.php redirige a ?enviado=1 o ?error=1
+────────────────────────────────────────────────── */
+(function () {
+  const params  = new URLSearchParams(window.location.search);
+  const section = document.getElementById('formulario');
+
+  if (params.get('enviado') === '1') {
+    const form    = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    if (form)    form.style.display = 'none';
+    if (success) success.classList.add('visible');
+    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  if (params.get('error') === '1') {
+    const errMsg = document.getElementById('form-error');
+    if (errMsg)  errMsg.classList.add('visible');
+    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+})();
+</script>
+
+</body>
+</html>

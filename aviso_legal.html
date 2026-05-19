@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aviso Legal — Khaviar Ibiza</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Manrope, sans-serif;
+      background-color: #FAFAF6;
+      color: #1c1c1a;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(250,250,246,0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(197,160,89,0.15);
+    }
+    .logo-serif { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 1.25rem; color: #C5A059; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; }
+    .logo-script { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: 1.25rem; color: #C5A059; letter-spacing: 2px; text-decoration: none; }
+
+    /* BACK LINK */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(47,183,179,0.8);
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 0.65; }
+
+    /* CONTENT */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+    }
+    .page-label {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(197,160,89,0.75);
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: #1c1c1a;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    .updated {
+      font-size: 12px;
+      color: rgba(28,28,26,0.4);
+      margin-bottom: 3rem;
+    }
+    .divider {
+      height: 1px;
+      background: rgba(197,160,89,0.2);
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1c1c1a;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(28,28,26,0.7);
+      margin-bottom: 1rem;
+    }
+    .placeholder {
+      display: inline-block;
+      background: rgba(47,183,179,0.1);
+      border: 1px dashed rgba(47,183,179,0.4);
+      border-radius: 4px;
+      padding: 1px 8px;
+      font-size: 12px;
+      color: rgba(47,183,179,0.9);
+      font-family: monospace;
+    }
+    a { color: #2FB7B3; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid rgba(197,160,89,0.12);
+    }
+    footer p { font-size: 11px; color: rgba(28,28,26,0.35); margin: 0; }
+    footer a { color: rgba(28,28,26,0.35); text-decoration: none; }
+    footer a:hover { opacity: 0.7; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" aria-label="Inicio">
+    <span class="logo-serif">Khaviar</span>
+    <span class="logo-script"> Ibiza</span>
+  </a>
+</header>
+
+<main>
+
+  <a href="index.html" class="back-link">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+    </svg>
+    Volver al inicio
+  </a>
+
+  <p class="page-label">Legal</p>
+  <h1>Aviso Legal</h1>
+  <p class="updated">Última actualización: mayo de 2025</p>
+
+  <div class="divider"></div>
+
+  <h2>1. Datos del titular</h2>
+  <p>
+    En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE), se informa de los siguientes datos:
+  </p>
+  <p>
+    <strong>Titular:</strong> <span class="placeholder">NOMBRE COMPLETO O RAZÓN SOCIAL</span><br>
+    <strong>NIF / CIF:</strong> <span class="placeholder">XXXXXXXXX</span><br>
+    <strong>Domicilio:</strong> <span class="placeholder">DIRECCIÓN FISCAL COMPLETA</span><br>
+    <strong>Email:</strong> <a href="mailto:hola@khaviaribiza.com">hola@khaviaribiza.com</a><br>
+    <strong>Sitio web:</strong> <a href="https://www.khaviaribiza.com">www.khaviaribiza.com</a>
+  </p>
+
+  <h2>2. Objeto y ámbito de aplicación</h2>
+  <p>
+    El presente Aviso Legal regula el acceso y el uso del sitio web <strong>www.khaviaribiza.com</strong>, titularidad del responsable indicado anteriormente, cuya actividad principal consiste en la prestación de servicios de experiencias gastronómicas de lujo en Ibiza.
+  </p>
+  <p>
+    El acceso a este sitio web y el uso de sus contenidos implica la aceptación plena y sin reservas de las condiciones del presente Aviso Legal. Si no está de acuerdo con estas condiciones, le rogamos que no acceda ni utilice este sitio.
+  </p>
+
+  <h2>3. Propiedad intelectual e industrial</h2>
+  <p>
+    Todos los contenidos del sitio web — incluyendo textos, fotografías, gráficos, imágenes, logotipos, iconos, código fuente y diseño gráfico — son propiedad del titular o de terceros que han autorizado su uso, y están protegidos por la legislación española e internacional sobre propiedad intelectual e industrial.
+  </p>
+  <p>
+    Queda prohibida su reproducción, distribución, comunicación pública o transformación sin autorización expresa y por escrito del titular.
+  </p>
+
+  <h2>4. Condiciones de uso</h2>
+  <p>
+    El usuario se compromete a hacer un uso adecuado de los contenidos y servicios del sitio web, y en particular a no emplearlos para realizar actividades ilícitas o contrarias a la buena fe y al orden público.
+  </p>
+
+  <h2>5. Exclusión de responsabilidad</h2>
+  <p>
+    El titular no garantiza la disponibilidad y continuidad del funcionamiento del sitio web, ni que el contenido esté libre de errores. Asimismo, no se responsabiliza de los daños y perjuicios causados por el uso del sitio o de la imposibilidad de acceso al mismo.
+  </p>
+  <p>
+    Este sitio puede contener enlaces a sitios web de terceros. El titular no asume responsabilidad alguna sobre el contenido de dichos sitios ni sobre las prácticas de privacidad de los mismos.
+  </p>
+
+  <h2>6. Legislación aplicable y jurisdicción</h2>
+  <p>
+    Las presentes condiciones se rigen e interpretan conforme a la legislación española. Para la resolución de cualquier controversia derivada del acceso o uso de este sitio web, las partes se someten a los juzgados y tribunales de <span class="placeholder">CIUDAD</span>, salvo que la normativa aplicable disponga otro fuero.
+  </p>
+
+</main>
+
+<footer>
+  <p>
+    © 2025 Khaviar Ibiza ·
+    <a href="aviso_legal.html">Aviso Legal</a> ·
+    <a href="politica_privacidad.html">Política de Privacidad</a>
+  </p>
+</footer>
+
+</body>
+</html>
