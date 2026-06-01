@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khaviar Ibiza — Dossier 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Pinyon+Script&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    /* ══════════════════ TOKENS ══════════════════ */
+    :root {
+      --teal:      #2FB7B3;
+      --teal-mid:  #1A8580;
+      --teal-deep: #0D5550;
+      --navy:      #041520;
+      --navy-dk:   #020B12;
+      --gold:      #C5A059;
+      --gold-lt:   rgba(197,160,89,0.35);
+      --cream:     #F8F5EF;
+      --cream-dk:  #EDE9E0;
+      --sand:      #DDD0BE;
+      --ink:       #1C1C1A;
+      --muted:     #7A7570;
+      --serif:  "Cormorant Garamond", Georgia, serif;
+      --script: "Pinyon Script", cursive;
+      --sans:   "Manrope", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page { size: 1200px 700px; margin: 0; }
+
+    body {
+      font-family: var(--sans);
+      background: #111;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @media screen {
+      body { padding: 32px 0; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    }
+
+    /* ══════════════════ PAGE ══════════════════ */
+    .page {
+      width: 100%;
+      max-width: 1200px;
+      min-height: 700px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      page-break-after: always;
+      break-after: page;
+    }
+    @media screen { .page { box-shadow: 0 20px 80px rgba(0,0,0,0.70); 
+    background-color: #2db7b3;} }
+
+    /* ══════════════════ TYPE HELPERS ══════════════════ */
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 7.5px;
+      font-weight: 600;
+      letter-spacing: 0.40em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .eyebrow--gold  { color: var(--gold); }
+    .eyebrow--white { color: rgba(255,255,255,0.70); }
+    .eyebrow--muted { color: var(--muted); }
+
+    .display {
+      font-family: var(--serif);
+      font-weight: 300;
+      line-height: 1.10;
+      color: var(--ink);
+    }
+    .display--white { color: #fff; }
+
+    .body-sm {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 300;
+      line-height: 1.80;
+    }
+    .body-sm--dark  { color: var(--ink); }
+    .body-sm--muted { color: var(--muted); }
+    .body-sm--white { color: rgba(255,255,255,0.85); }
+
+    /* ══════════════════ RULES & SEPARATORS ══════════════════ */
+    .rule       { border: none; border-top: 1px solid rgba(28,28,26,0.12); }
+    .rule--gold { border-top-color: rgba(197,160,89,0.40); }
+    .rule--teal { border-top-color: rgba(47,183,179,0.30); }
+    .rule--white{ border-top-color: rgba(255,255,255,0.25); }
+
+    /* Caviar dot lines */
+    .dots-gold {
+      height: 12px;
+      background-image: radial-gradient(circle, rgba(197,160,89,0.65) 1.1px, transparent 1.1px);
+      background-size: 11px 11px;
+      background-position: center;
+    }
+    .dots-white {
+      height: 12px;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.45) 1px, transparent 1px);
+      background-size: 11px 11px;
+      background-position: center;
+    }
+    .dots-teal {
+      height: 12px;
+      background-image: radial-gradient(circle, rgba(47,183,179,0.42) 1px, transparent 1px);
+      background-size: 11px 11px;
+      background-position: center;
+    }
+
+    /* ══════════════════ TEXTURES ══════════════════ */
+    .fish {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cellipse cx='24' cy='24' rx='20' ry='14' fill='none' stroke='%23ffffff' stroke-width='0.7' opacity='0.06'/%3E%3Cellipse cx='24' cy='24' rx='12' ry='8' fill='none' stroke='%23ffffff' stroke-width='0.4' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 48px 48px;
+    }
+    .mosaic {
+      background-image: url('mosaic.svg');
+      background-size: 90px 90px;
+      background-repeat: repeat;
+    }
+
+    /* ══════════════════ ARCH IMAGE ══════════════════ */
+    .arch { overflow: hidden; }
+
+    /* ══════════════════ STAT BLOCK ══════════════════ */
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--teal);
+    }
+    .stat-label {
+      font-family: var(--sans);
+      font-size: 7.5px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* ══════════════════ FORMAT NUMBER ══════════════════ */
+    .format-num {
+      font-family: var(--serif);
+      font-size: 56px;
+      font-weight: 300;
+      line-height: 1;
+      color: rgba(47,183,179,0.18);
+      margin-bottom: -8px;
+    }
+    .format-title {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+    .format-sub {
+      font-family: var(--sans);
+      font-size: 7px;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 7px;
+    }
+
+    /* ══════════════════ PAGE NAV ══════════════════ */
+    .pg-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(28,28,26,0.10);
+      margin-bottom: 18px;
+    }
+    .pg-top--dark { border-bottom-color: rgba(255,255,255,0.10); }
+    .pg-brand {
+      font-family: var(--serif);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .pg-brand--gold  { color: var(--gold); }
+    .pg-brand--white { color: rgba(255,255,255,0.70); }
+    .pg-folio {
+      font-family: var(--sans);
+      font-size: 7.5px;
+      font-weight: 400;
+      letter-spacing: 0.30em;
+      color: var(--muted);
+    }
+    .pg-folio--white { color: rgba(255,255,255,0.45); }
+
+    /* ══════════════════ RESPONSIVE ══════════════════ */
+
+    /* Tablet (≤ 900px): reducir padding y fuentes */
+    @media (max-width: 900px) {
+      .page { min-height: auto; }
+      .body-sm { font-size: 10px; }
+      .eyebrow { font-size: 8px; }
+    }
+
+    /* Mobile (≤ 680px): apilar columnas */
+    @media (max-width: 680px) {
+      body { padding: 0; gap: 0; background: #f0ede8; }
+
+      .page {
+        flex-direction: column !important;
+        min-height: auto;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        border-bottom: 4px solid var(--teal-deep);
+      }
+
+      /* Portada */
+      .page--cover {
+        min-height: 100svh;
+      }
+
+      /* Columnas fijas → 100% */
+      .col-left, .col-right, .col-img {
+        width: 100% !important;
+        flex: none !important;
+        height: auto !important;
+      }
+
+      /* Imagen en columnas → altura fija */
+      .col-img-wrap {
+        height: 220px !important;
+      }
+
+      /* Reducir padding en mobile */
+      .pad-page {
+        padding: 28px 24px !important;
+      }
+
+      .stat-num { font-size: 28px; }
+      .format-num { font-size: 40px; }
+      .format-title { font-size: 16px; }
+
+      /* Grids de formatos → 2 cols en mobile */
+      .grid-formats {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 16px !important;
+      }
+      .grid-formats > div {
+        border-right: none !important;
+        padding: 0 0 16px 0 !important;
+        border-bottom: 1px solid rgba(28,28,26,0.10);
+      }
+
+      /* Grid items incluidos → 2 cols */
+      .grid-includes {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Texto hero más grande en mobile */
+      .hero-title { font-size: 52px !important; }
+      .hero-script { font-size: 26px !important; }
+    }
+
+    @media (max-width: 400px) {
+      .hero-title { font-size: 40px !important; }
+      .grid-formats { grid-template-columns: 1fr !important; }
+    }
+
+  </style>
+</head>
+<body>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PÁGINA 1 · PORTADA — Fondo turquesa editorial
+═══════════════════════════════════════════════════ -->
+<div class="page page--cover">
+
+  <!-- Imagen hero full-bleed -->
+  <div style="position:absolute; inset:0;opacity:0.1; background-image: url('img/mosaic.svg');background-repeat:repeat; background-size:200px 200px; background-color: #ffffff29;">
+
+    </div>
+  
+  <!-- Overlay turquesa editorial (reemplaza el navy oscuro) -->
+  <div style="position:absolute; inset:0;
+              background:linear-gradient(135deg, rgba(13,85,80,0.92) 0%, rgba(26,133,128,0.70) 50%, rgba(13,85,80,0.88) 100%);"></div>
+
+  <!-- Gradiente teal brillante desde abajo-izquierda -->
+  <div style="position:absolute; inset:0;
+              background:radial-gradient(ellipse at 25% 110%, rgba(47,183,179,0.55) 0%, transparent 50%);"></div>
+
+  <!-- Acento de luz superior derecha -->
+  <div style="position:absolute; inset:0;
+              background:radial-gradient(ellipse at 85% -10%, rgba(197,160,89,0.18) 0%, transparent 45%);"></div>
+
+  <!-- ── Contenido portada ── -->
+  <div class="pad-page" style="position:relative; width:100%;  display:flex; flex-direction:column; padding:36px 52px;">
+
+    <!-- Header nav editorial -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+      <p class="eyebrow" style="color:var(--gold); letter-spacing:0.50em;">Ibiza · España</p>
+      <p class="eyebrow eyebrow--white">Dossier de presentación · 2026</p>
+    </div>
+
+    <!-- Wordmark central -->
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; max-width:560px;">
+
+      <!-- Línea dorada decorativa -->
+      <div style="width:40px; height:1px; background:var(--gold); opacity:0.8; margin-bottom:20px;"></div>
+
+      <!-- Logotipo editorial -->
+      <h1 class="hero-title" style="font-family:var(--serif); font-size:72px; font-weight:300; letter-spacing:0.12em;
+                 text-transform:uppercase; color:white; line-height:0.95; margin-bottom:18px;">
+        KHAVIAR<br>
+        <!-- IBIZA en blanco para máximo contraste sobre turquesa -->
+        <span style="font-weight:600; color:#ffffff; text-shadow: 0 0 40px rgba(197,160,89,0.50);">IBIZA</span>
+      </h1>
+
+      <!-- Tagline script -->
+      <p class="hero-script" style="font-family:var(--script); font-size:30px; color:var(--gold); line-height:1.3; margin-bottom:22px; text-shadow: 0 1px 12px rgba(0,0,0,0.30);">
+        Forget the rules.
+      </p>
+
+      <!-- Separator caviar dots -->
+      <div class="dots-gold" style="width:80px;"></div>
+
+    </div>
+
+    <!-- Footer portada editorial -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <p class="eyebrow" style="color:rgba(255,255,255,0.75); margin-bottom:4px;">Aperitivos privados de lujo</p>
+        <p class="eyebrow" style="color:rgba(255,255,255,0.55);">www.khaviaribiza.com · @khaviaribiza</p>
+      </div>
+      <div style="text-align:right;">
+        <p style="font-family:var(--serif); font-size:11px; color:rgba(255,255,255,0.50); letter-spacing:0.25em;">01 / 06</p>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /page 1 -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     PÁGINA 2 · MANIFIESTO
+═══════════════════════════════════════════════════ -->
+<div class="page" style="background:var(--cream);">
+
+  <!-- Barra teal izquierda -->
+  <div style="position:absolute; left:0; top:0; bottom:0; width:3px;
+              background:linear-gradient(to bottom, var(--teal), var(--teal-deep) 80%, transparent);
+              z-index:2;"></div>
+
+  <!-- ── Columna izquierda (48%) ── -->
+  <div class="col-left pad-page" style="width:48%; padding:40px 40px 36px 48px; display:flex; flex-direction:column; justify-content:space-between; position:relative; z-index:1; border-right:1px solid rgba(28,28,26,0.08);">
+
+    <!-- Eyebrow nav -->
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <span class="pg-brand">Khaviar Ibiza</span>
+      <span class="pg-folio">02 / 06</span>
+    </div>
+
+    <!-- Headline editorial -->
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+
+      <p class="eyebrow" style="margin-bottom:14px;">Manifiesto</p>
+
+      <h2 class="display" style="font-size:44px; margin-bottom:20px; max-width:360px;">
+        El caviar<br>no debería<br>
+        <em style="color:var(--teal); font-style:italic;">ser serio.</em>
+      </h2>
+
+      <hr class="rule" style="width:100%; margin-bottom:20px;">
+
+      <p style="font-family:var(--script); font-size:22px; color:var(--gold); line-height:1.4; margin-bottom:16px;">
+        "Sin etiquetas, sin guantes blancos."
+      </p>
+
+      <div style="columns:2; column-gap:20px;">
+        <p class="body-sm body-sm--muted">
+          En Khaviar Ibiza, rompemos el protocolo para devolverle al grano de oro su verdadera esencia: el placer. Cambiamos el terciopelo por el lino, y las salas cerradas por el atardecer.
+        </p>
+        <p class="body-sm body-sm--muted" style="margin-top:8px;">
+          Solo tú, tu gente y un Oscetra de primer nivel. Eso es Khaviar Ibiza. Una experiencia que no sigue reglas porque las mejores nunca lo hacen.
+        </p>
+      </div>
+
+    </div>
+
+    <div style="display:flex; align-items:center; gap:10px; padding-top:14px; border-top:1px solid rgba(28,28,26,0.08);">
+      <div class="dots-teal" style="width:24px;"></div>
+      <p class="eyebrow eyebrow--muted" style="font-size:7px;">Dossier Khaviar Ibiza · 2025</p>
+    </div>
+
+  </div>
+
+  <!-- ── Columna derecha (52%) ── -->
+  <div class="col-right" style="flex:1; display:flex; flex-direction:column; overflow:hidden;">
+
+    <div class="col-img-wrap" style="flex:0 0 60%; padding:28px 36px 0 28px; display:flex; justify-content:flex-end; align-items:flex-start; background:var(--cream); height:40%;">
+      <div class="arch" style="width:100%; height:100%;">
+        <img src="img/_A748085.jpg" alt=""
+             style="width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;">
+      </div>
+    </div>
+
+    <div style="flex:1; padding:20px 36px 28px 28px; display:flex; flex-direction:column; justify-content:space-between; background:var(--cream);">
+
+      <div>
+        <p class="eyebrow" style="margin-bottom:6px;">Concepto</p>
+        <p class="body-sm body-sm--dark" style="max-width:340px;">
+          Khaviar Ibiza reinterpreta el aperitivo de lujo a través de experiencias privadas de caviar y champagne para villas, yates y celebraciones especiales en Ibiza.
+        </p>
+      </div>
+
+      <hr class="rule" style="margin:10px 0;">
+
+      <div>
+        <p class="eyebrow" style="margin-bottom:5px;">Ocasiones</p>
+        <p class="body-sm body-sm--muted">Villas privadas · Yates · Bodas · Cumpleaños · Eventos privados en Ibiza</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div><!-- /page 2 -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     PÁGINA 3 · QUÉ OFRECEMOS
+═══════════════════════════════════════════════════ -->
+<div class="page" style="background:var(--cream);">
+
+  <!-- ── Imagen izquierda (42%) ── -->
+  <div class="col-img" style="width:42%; height:100%; flex-shrink:0; position:relative; overflow:hidden;">
+    <img src="img/_A748155.jpg" alt=""
+         style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+    <div style="position:absolute; top:28px; left:24px;">
+      <p class="eyebrow" style="color:rgba(255,255,255,0.80);">Khaviar Ibiza · 2025</p>
+    </div>
+  </div>
+
+  <!-- ── Contenido derecha (58%) ── -->
+  <div class="col-right pad-page" style="flex:1; padding:38px 48px 36px 36px; display:flex; flex-direction:column; justify-content:space-between; position:relative; z-index:1;">
+
+    <div class="pg-top">
+      <span class="pg-brand">Qué ofrecemos</span>
+      <span class="pg-folio">03 / 06</span>
+    </div>
+
+    <div style="margin-bottom:18px;">
+      <h2 class="display" style="font-size:38px; max-width:380px; margin-bottom:14px;">
+        Un aperitivo completo,<br>
+        <em style="color:var(--teal); font-style:italic;">servido donde tú estés.</em>
+      </h2>
+      <p class="body-sm body-sm--muted" style="max-width:380px;">
+        Barra móvil, asistentes de staff, caviar Oscetra, champagne premium y snacks —
+        todo gestionado por nosotros. Tú solo decides la fecha y el lugar.
+      </p>
+    </div>
+
+    <hr class="rule" style="margin-bottom:20px;">
+
+    <div style="display:flex; gap:0; margin-bottom:20px;">
+      <div style="flex:1; padding-right:24px; border-right:1px solid rgba(28,28,26,0.10);">
+        <p class="stat-num">600g</p>
+        <p class="stat-label">de caviar por servicio</p>
+      </div>
+      <div style="flex:1; padding:0 24px; border-right:1px solid rgba(28,28,26,0.10);">
+        <p class="stat-num">2+</p>
+        <p class="stat-label">personas mínimo (Yacht)</p>
+      </div>
+      <div style="flex:1; padding-left:24px;">
+        <p class="stat-num">5</p>
+        <p class="stat-label">formatos disponibles</p>
+      </div>
+    </div>
+
+    <hr class="rule" style="margin-bottom:16px;">
+
+    <div class="grid-includes" style="display:grid; grid-template-columns:1fr 1fr; gap:8px 24px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <div style="width:4px; height:4px; background:var(--teal); border-radius:50%; flex-shrink:0;"></div>
+        <p class="body-sm body-sm--muted">Barra móvil Khaviar</p>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <div style="width:4px; height:4px; background:var(--teal); border-radius:50%; flex-shrink:0;"></div>
+        <p class="body-sm body-sm--muted">Champagne premium</p>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <div style="width:4px; height:4px; background:var(--gold); border-radius:50%; flex-shrink:0;"></div>
+        <p class="body-sm body-sm--muted">Caviar Oscetra – Beluga iraní</p>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <div style="width:4px; height:4px; background:var(--gold); border-radius:50%; flex-shrink:0;"></div>
+        <p class="body-sm body-sm--muted">2 asistentes de staff</p>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <div style="width:4px; height:4px; background:var(--teal); border-radius:50%; flex-shrink:0;"></div>
+        <p class="body-sm body-sm--muted">Snacks y acompañamientos</p>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <div style="width:4px; height:4px; background:var(--teal); border-radius:50%; flex-shrink:0;"></div>
+        <p class="body-sm body-sm--muted">Gestión completa del evento</p>
+      </div>
+    </div>
+
+    <div style="margin-top:auto; display:flex; align-items:center; gap:10px; padding-top:14px; border-top:1px solid rgba(28,28,26,0.08);">
+      <div class="dots-gold" style="width:24px;"></div>
+      <p class="eyebrow eyebrow--muted" style="font-size:7px;">Dossier Khaviar Ibiza · 2025</p>
+    </div>
+
+  </div>
+
+</div><!-- /page 3 -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     PÁGINA 4 · FORMATOS
+═══════════════════════════════════════════════════ -->
+<div class="page" style="background:var(--cream-dk);">
+
+  <div class="pad-page" style="width:100%; padding:36px 36px 32px 48px; display:flex; flex-direction:column; position:relative; z-index:1;">
+
+    <div class="pg-top" style="margin-bottom:20px;">
+      <span class="pg-brand">Nuestros Formatos</span>
+      <span class="pg-folio">04 / 06</span>
+    </div>
+
+    <div style="margin-bottom:22px;">
+      <h2 class="display" style="font-size:34px; color:var(--ink);">
+        Una experiencia<br>
+        <em style="color:var(--teal); font-style:italic;">para cada momento.</em>
+      </h2>
+    </div>
+
+    <hr class="rule" style="margin-bottom:22px;">
+
+    <div class="grid-formats" style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr 1fr; gap:0; flex:1;">
+
+      <!-- 01 Aperitif -->
+      <div style="padding-right:22px; border-right:1px solid rgba(28,28,26,0.10);">
+        <p class="format-num">01</p>
+        <p class="format-sub">El más versátil</p>
+        <p class="format-title">Khaviar <em style="font-weight:300; font-style:italic;">Aperitif</em></p>
+        <hr class="rule--teal" style="margin-bottom:10px; opacity:0.5;">
+        <p class="body-sm body-sm--muted">Barra móvil, 2 staff, 600 g de caviar, 10 botellas Extra Brut, agua, soda y snacks clásicos.</p>
+        <p class="body-sm" style="color:var(--teal); margin-top:6px; font-size:8px; font-weight:500;">Desde 20 invitados</p>
+      </div>
+
+      <!-- 02 Selection -->
+      <div style="padding:0 22px; border-right:1px solid rgba(28,28,26,0.10);">
+        <p class="format-num">02</p>
+        <p class="format-sub">Experiencia elevada</p>
+        <p class="format-title">Khaviar <em style="font-weight:300; font-style:italic;">Selection</em></p>
+        <hr class="rule--teal" style="margin-bottom:10px; opacity:0.5;">
+        <p class="body-sm body-sm--muted">Barra móvil, 2 staff, 600 g de caviar, Champagne Blanc de Blancs y tabla de mar: ostras, gamba roja y salmón.</p>
+        <p class="body-sm" style="color:var(--teal); margin-top:6px; font-size:8px; font-weight:500;">Desde 20 invitados</p>
+      </div>
+
+      <!-- 03 Prestige -->
+      <div style="padding:0 22px; border-right:1px solid rgba(28,28,26,0.10);">
+        <p class="format-num">03</p>
+        <p class="format-sub">Máxima exclusividad</p>
+        <p class="format-title">Khaviar <em style="font-weight:300; font-style:italic;">Prestige</em></p>
+        <hr class="rule--gold" style="margin-bottom:10px; opacity:0.6;">
+        <p class="body-sm body-sm--muted">600 g de caviar, Champagne Millésime, Gran Reserva o vodka premium. Servicio gourmet con Wagyu A5 y/o cangrejo real.</p>
+        <p class="body-sm" style="color:var(--gold); margin-top:6px; font-size:8px; font-weight:500;">Desde 20 invitados</p>
+      </div>
+
+      <!-- 04 Bespoke -->
+      <div style="padding:0 22px; border-right:1px solid rgba(28,28,26,0.10);">
+        <p class="format-num">04</p>
+        <p class="format-sub">Máxima exclusividad</p>
+        <p class="format-title">Khaviar <em style="font-weight:300; font-style:italic;">Bespoke</em></p>
+        <hr class="rule--gold" style="margin-bottom:10px; opacity:0.6;">
+        <p class="body-sm body-sm--muted">Propuesta totalmente a medida. Producto, bebida, staff y puesta en escena se diseñan según el tipo de evento, el contexto y el nivel de experiencia buscado.</p>
+        <p class="body-sm" style="color:var(--gold); margin-top:6px; font-size:8px; font-weight:500;">Desde 20 invitados</p>
+      </div>
+
+      <!-- 05 Yacht -->
+      <div style="padding:0 22px;">
+        <p class="format-num">05</p>
+        <p class="format-sub">Máxima exclusividad</p>
+        <p class="format-title">Khaviar <em style="font-weight:300; font-style:italic;">Yacht</em></p>
+        <hr class="rule--gold" style="margin-bottom:10px; opacity:0.6;">
+        <p class="body-sm body-sm--muted">Diseñado para yates y welcome aperitifs privados desde 2 personas. Desde Oscetra hasta Beluga Imperial iraní. Desayunos French Toast con caviar y mimosa disponibles.</p>
+        <p class="body-sm" style="color:var(--gold); margin-top:6px; font-size:8px; font-weight:500;">Desde 20 invitados</p>
+      </div>
+
+    </div>
+
+    <div style="margin-top:auto; display:flex; align-items:center; gap:10px; padding-top:12px; border-top:1px solid rgba(28,28,26,0.08);">
+      <div class="dots-gold" style="width:24px;"></div>
+      <p class="eyebrow eyebrow--muted" style="font-size:7px;">Dossier Khaviar Ibiza · 2025</p>
+    </div>
+
+  </div>
+
+</div><!-- /page 4 -->
+
+
+<!-- ═══════════════════════════════════════════════════
+     PÁGINA 6 · CÓMO RESERVAR · CONTACTO
+═══════════════════════════════════════════════════ -->
+<div class="page">
+
+  <!-- ── Panel pasos izquierdo (56%) ── -->
+  <div class="col-left pad-page" style="width:56%; background:var(--cream); padding:36px 44px 32px 48px;
+              display:flex; flex-direction:column; position:relative; border-right:1px solid rgba(28,28,26,0.08);">
+
+    <!-- Barra teal izquierda -->
+    <div style="position:absolute; left:0; top:0; bottom:0; width:3px;
+                background:linear-gradient(to bottom, var(--teal), var(--teal-deep) 80%, transparent);"></div>
+
+    <div class="pg-top" style="margin-bottom:22px;">
+      <span class="pg-brand">Cómo reservar</span>
+      <span class="pg-folio">06 / 06</span>
+    </div>
+
+    <div style="margin-bottom:22px;">
+      <h2 class="display" style="font-size:40px; margin-bottom:10px;">
+        Todo empieza<br>
+        <em style="color:var(--teal); font-style:italic;">por WhatsApp.</em>
+      </h2>
+      <div class="dots-gold" style="width:56px;"></div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:0; flex:1;">
+
+      <div style="display:flex; gap:20px; padding:14px 0; border-bottom:1px solid rgba(28,28,26,0.08);">
+        <div style="width:30px; flex-shrink:0;">
+          <span style="font-family:var(--serif); font-size:22px; font-weight:300; color:var(--teal); opacity:0.70; line-height:1;">01</span>
+        </div>
+        <div>
+          <p style="font-family:var(--serif); font-size:14px; font-weight:600; color:var(--ink); margin-bottom:3px;">Escríbenos por WhatsApp</p>
+          <p class="body-sm body-sm--muted">Comparte la fecha, la localización, el número de invitados y el formato deseado.</p>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:20px; padding:14px 0; border-bottom:1px solid rgba(28,28,26,0.08);">
+        <div style="width:30px; flex-shrink:0;">
+          <span style="font-family:var(--serif); font-size:22px; font-weight:300; color:var(--teal); opacity:0.70; line-height:1;">02</span>
+        </div>
+        <div>
+          <p style="font-family:var(--serif); font-size:14px; font-weight:600; color:var(--ink); margin-bottom:3px;">Coordinamos la experiencia</p>
+          <p class="body-sm body-sm--muted">Khaviar Ibiza gestiona cada detalle y confirma la reserva en menos de 24h.</p>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:20px; padding:14px 0;">
+        <div style="width:30px; flex-shrink:0;">
+          <span style="font-family:var(--serif); font-size:22px; font-weight:300; color:var(--gold); opacity:0.80; line-height:1;">03</span>
+        </div>
+        <div>
+          <p style="font-family:var(--serif); font-size:14px; font-weight:600; color:var(--ink); margin-bottom:3px;">Disfruta del ritual</p>
+          <p class="body-sm body-sm--muted">Nos encargamos de todo. Tú solo tienes que estar presente.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:auto; display:flex; align-items:center; gap:10px; padding-top:12px; border-top:1px solid rgba(28,28,26,0.08);">
+      <div class="dots-teal" style="width:24px;"></div>
+      <p class="eyebrow eyebrow--muted" style="font-size:7px;">Dossier Khaviar Ibiza · 2025</p>
+    </div>
+
+  </div>
+
+  <!-- ── Panel contacto derecho (44%) — navy ── -->
+  <div class="col-right" style="flex:1; background:#2FB7B3; position:relative; display:flex; flex-direction:column;
+              align-items:center; justify-content:center; padding:36px 36px; text-align:center; overflow:hidden;">
+<!-- Imagen hero full-bleed -->
+ 
+    <div class="fish" style="position:absolute; inset:0; opacity:0.50;"></div>
+    <div class="mosaic" style="position:absolute; inset:0; opacity:0.05;"></div>
+
+    <div style="position:absolute; top:-40px; left:-40px; width:220px; height:220px;
+                background:radial-gradient(circle, rgba(47,183,179,0.30) 0%, transparent 65%);"></div>
+    <div style="position:absolute; bottom:-40px; right:-40px; width:200px; height:200px;
+                background:radial-gradient(circle, rgba(47,183,179,0.22) 0%, transparent 65%);"></div>
+
+    <div style="position:absolute; inset:0; opacity:0.12;">
+      
+    </div>
+ <div style="position:absolute; inset:0;opacity:0.04; background-image: url('img/mosaic.svg');background-repeat:repeat; background-size:100px; background-color: #ffffff29;">
+
+    </div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:0;">
+
+      <p style="font-family:var(--script); font-size:18px; color:rgba(197,160,89,0.80); margin-bottom:12px; line-height:1.4;">
+        Una experiencia que no olvidarás.
+      </p>
+
+      <h2 style="font-family:var(--serif); font-size:30px; font-weight:600; letter-spacing:0.26em;
+                 text-transform:uppercase; color:white; margin-bottom:10px; line-height:1.05;">
+        KHAVIAR<br>IBIZA
+      </h2>
+
+      <div class="dots-gold" style="width:60px; margin-bottom:12px;"></div>
+
+      <hr class="rule--gold" style="width:90px; margin:0 auto 16px;">
+
+      <div style="display:flex; flex-direction:column; gap:7px; align-items:center;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:14px; height:1px; background:rgba(197,160,89,0.60);"></div>
+          <p class="body-sm body-sm--white" style="font-size:9.5px;">info@khaviaribiza.com</p>
+          <div style="width:14px; height:1px; background:rgba(197,160,89,0.60);"></div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:14px; height:1px; background:rgba(47,183,179,0.60);"></div>
+          <p class="body-sm body-sm--white" style="font-size:9.5px;">+34 603 228 569</p>
+          <div style="width:14px; height:1px; background:rgba(47,183,179,0.60);"></div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:14px; height:1px; background:rgba(197,160,89,0.60);"></div>
+          <p class="body-sm body-sm--white" style="font-size:9.5px;">www.khaviaribiza.com</p>
+          <div style="width:14px; height:1px; background:rgba(197,160,89,0.60);"></div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:14px; height:1px; background:rgba(47,183,179,0.60);"></div>
+          <p class="body-sm body-sm--white" style="font-size:9.5px;">@khaviaribiza</p>
+          <div style="width:14px; height:1px; background:rgba(47,183,179,0.60);"></div>
+        </div>
+      </div>
+
+      <hr class="rule--gold" style="width:90px; margin:14px auto 10px;">
+      <p class="eyebrow" style="color:rgba(255,255,255,0.40); font-size:6.5px; letter-spacing:0.55em;">
+        Aperitivos privados de lujo · Ibiza
+      </p>
+      <p class="eyebrow" style="color:rgba(255,255,255,0.25); font-size:6px; margin-top:4px;">
+        © 2025 Khaviar Ibiza · Todos los derechos reservados
+      </p>
+
+    </div>
+
+  </div>
+
+</div><!-- /page 6 -->
+
+
+</body>
+</html>
